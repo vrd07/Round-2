@@ -12,8 +12,9 @@ function App() {
   const [showInstructions, setShowInstructions] = useState(true);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameCompleted, setGameCompleted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(1800); // 30 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(4200); // 30 minutes in seconds
   const [answeredQuestions, setAnsweredQuestions] = useState(Array(questions.length).fill(false));
+
   
   useEffect(() => {
     let timer;
@@ -37,6 +38,8 @@ function App() {
     if (isCorrect) {
       setScore(prevScore => prevScore + points);
     }
+
+  
     
     const newAnsweredQuestions = [...answeredQuestions];
     newAnsweredQuestions[currentQuestionIndex] = true;
